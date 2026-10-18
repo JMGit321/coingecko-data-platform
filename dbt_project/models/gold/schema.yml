@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: dim_coins
+    description: "Dimension model containing static cryptocurrency reference data."
+    columns:
+      - name: coin_id
+        description: "Primary Key identifying unique coin entity."
+        tests:
+          - unique
+          - not_null
+
+  - name: fct_crypto_daily_metrics
+    description: "Fact model capturing daily cryptocurrency prices, market caps, and volumes."
+    columns:
+      - name: fact_crypto_daily_key
+        description: "Primary Key for daily fact snapshot records."
+        tests:
+          - unique
+          - not_null
+      - name: coin_id
+        description: "Foreign Key referencing dim_coins."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_coins')
+              field: coin_id
+      - name: current_price_usd
+        tests:
+          - not_null
