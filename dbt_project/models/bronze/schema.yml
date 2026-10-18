@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: bronze
+    schema: bronze
+    description: "Raw JSON ingested from CoinGecko API landed into PostgreSQL staging area."
+    tables:
+      - name: raw_coingecko_coins
+        description: "Raw records corresponding to top 100 cryptocurrencies."
