@@ -30,7 +30,7 @@ services:
       POSTGRES_USER: ${POSTGRES_USER:-dw_user}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Define POSTGRES_PASSWORD in the .env file}
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - postgres_dw_data:/var/lib/postgresql/data
     healthcheck:
