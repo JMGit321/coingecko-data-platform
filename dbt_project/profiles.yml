@@ -3,10 +3,10 @@ coingecko_profile:
   outputs:
     dev:
       type: postgres
-      host: postgres_dw
+      host: localhost
       user: dw_user
       pass: dw_password
-      port: 5432
+      port: 5433
       dbname: warehouse
       schema: public
       threads: 4
